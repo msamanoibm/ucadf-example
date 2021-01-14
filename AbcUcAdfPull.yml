@@ -1,0 +1,33 @@
+# ===============================================================================
+# This actions file exports the ABC-UCADF from an UrbanCode instance.
+# ===============================================================================
+
+# Initialize the properties.
+propertyFiles:
+  # The package-specific properties.
+  - fileName: "${u:ucAdfPackageDir}/Actions/AbcUcAdfActionProperties.yml"
+  #
+  # The instance-spectific properties.
+  - fileName: "${u:UCADF_STORE}/Instances/${u:ucAdfInstance}/instance.properties"
+  - fileName: "${u:UCADF_STORE}/Instances/${u:ucAdfInstance}/instance.secure.properties"
+  
+# Run the actions.
+actions:
+  # Export the security actions.
+  #- action: UcdWriteSecurityRolesPermissions
+    #match: "^ABC .*"
+    #fileName: "${u:ucAdfPackageDir}/Actions/AbcUcAdfSecurity.json"
+    #failIfNotFound: false
+
+  # Export the UCADF Management application.
+  #- action: UcdExportApplication
+    #application: "${u:ucAdfManagementApp}"
+    #environmentMatch: ""
+    #fileName: "${u:ucAdfPackageDir}/Applications/${u:ucAdfManagementApp}/Application.json"
+
+  # Export the UCADF-Assembly application.
+  - action: UcdExportApplication
+    application: "nyl-migration-test"
+    environmentMatch: ".*"
+    fileName: "export/Application.json"
+      

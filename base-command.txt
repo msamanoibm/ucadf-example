@@ -1,0 +1,1 @@
+ucadfclient -f pull.yml -DucAdfInstance=dev -DpackageDir=1.0
