@@ -21,7 +21,7 @@ actions:
 
    #Export the UCADF Management application.
   - action: UcdExportApplication
-    application: "test"
+    application: "nyl-migration-test"
     #match: ".*"
     environmentMatch: ".*"
     fileName: "1.0/Application.json"
